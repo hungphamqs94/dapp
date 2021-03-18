@@ -1,0 +1,7 @@
+truffle deploy --network ropsten --reset
+truffle console --network ropsten
+
+var dm; Demo.at("0xbc8611c971dfb5ff9995e06fe18502f8e75cc5e2").then( function(x) { dm = x });
+dm.balance().then( function(x) { return x.toString(); });
+dm.contribute({value: 100000000000000000});
+dm.balance().then( function(x) { return x.toString(); });
